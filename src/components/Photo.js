@@ -11,6 +11,12 @@ class Photo extends Component {
         <li key={photo.id}>
           <img src={`${photo.img_src}`} alt="rover" />
         </li>
+
+        <a href="/" className={"button1"}>Save Above Photo</a>
+
+        <br />
+        <br />
+        <br />
       </div>
     );
   }

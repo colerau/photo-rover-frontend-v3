@@ -9,7 +9,7 @@ class PhotosList extends Component {
     return(
       <div>
         <h1>
-          {`Curiosity Rover Photos for Yesterday, ${getYesterday()}`}
+          {`Curiosity Rover Photos from Yesterday, ${getYesterday()}`}
         </h1>
 
         <ul>

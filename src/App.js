@@ -22,7 +22,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>Photo Rover</h1>
+          <h4>view and save pictures of Mars from NASA's Curiosity Rover</h4>
           <img src='https://solarsystem.nasa.gov/internal_resources/3841' className="App-logo" alt="logo" />
+          <br />
+          <br />
+          <img src="https://www.pinclipart.com/picdir/big/53-534990_white-arrow-down-white-arrow-down-png-clipart.png" height="100px" />
         </header>
         <PhotosList photos={this.filterPhotos(this.props.photos)} />
       </div>

@@ -2,13 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import PhotosList from './containers/PhotosList'
-import { getTodayPhotos } from './actions/getTodayPhotos'
+import { getYesterdayPhotos } from './actions/getYesterdayPhotos'
 import { connect } from 'react-redux'
 
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.fetchTodayPhotos()
+    this.props.fetchYesterdayPhotos()
   }
 
   render() {
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchTodayPhotos: () => dispatch(getTodayPhotos())
+  fetchYesterdayPhotos: () => dispatch(getYesterdayPhotos())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

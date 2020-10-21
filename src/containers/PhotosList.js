@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import App from '../App';
 import Photo from '../components/Photo';
-import { getToday } from '../actions/getTodayPhotos'
+import { getYesterday } from '../actions/getYesterdayPhotos'
 
 class PhotosList extends Component {
 
@@ -13,7 +13,7 @@ class PhotosList extends Component {
     return(
       <div>
         <h1>
-          {`Curiosity Rover Photos for ${getToday()}`}
+          {`Curiosity Rover Photos for Yesterday, ${getYesterday()}`}
         </h1>
 
         <ul>

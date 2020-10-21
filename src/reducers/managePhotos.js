@@ -12,7 +12,6 @@ const managePhotos = (state = { photos: [], loading: false }, action) => {
   
       }
     case 'DEFAULT_PHOTOS':
-      console.log(action.payload.photos)
       return {
         ...state,
         photos: [...action.payload.photos]

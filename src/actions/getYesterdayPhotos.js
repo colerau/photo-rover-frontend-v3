@@ -16,6 +16,5 @@ export const getToday = () => {
 export const getYesterday = () => {
   let today = new Date();
   let formatted = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()-1);
-  console.log(formatted)
   return formatted;
 }

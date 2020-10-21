@@ -5,10 +5,6 @@ import { getYesterday } from '../actions/getYesterdayPhotos'
 
 class PhotosList extends Component {
 
-  solve() {
-    console.log(0)
-  }
-
   render() {
     return(
       <div>
@@ -17,9 +13,8 @@ class PhotosList extends Component {
         </h1>
 
         <ul>
-          {this.solve()}
           {this.props.photos && this.props.photos.map((photo) => (
-            <Photo photo={photo} />
+            <Photo key={photo.id} photo={photo} />
           ))}
 
         </ul>

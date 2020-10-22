@@ -29,6 +29,12 @@ const managePhotos = (state = { photos: [], loading: false, userId: 0, username:
         username: action.payload.username
       }
 
+    case 'NEW_EARTH_DATE':
+      return {
+        ...state,
+        photos: [...action.payload.photos]
+      }
+
     default:
       return state
   }

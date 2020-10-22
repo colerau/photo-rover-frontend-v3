@@ -4,6 +4,7 @@ import Photo from '../components/Photo';
 import { getYesterday } from '../actions/getYesterdayPhotos'
 import SignUp from '../components/SignUp'
 import LogIn from '../components/LogIn'
+import NewEarthDate from '../components/NewEarthDate'
 
 class PhotosList extends Component {
 
@@ -13,6 +14,8 @@ class PhotosList extends Component {
         <SignUp />
         <br />
         <LogIn />
+        <br />
+        <NewEarthDate />
         <h1>
           {`Curiosity Rover Photos from Yesterday, ${getYesterday()}`}
         </h1>

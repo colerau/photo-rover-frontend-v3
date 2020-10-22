@@ -13,7 +13,7 @@ class SignUp extends Component {
   }
 
   handleSubmit = (event) => {
-
+    
   }
 
   render() {

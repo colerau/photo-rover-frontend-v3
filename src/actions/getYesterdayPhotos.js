@@ -1,3 +1,4 @@
+// action creator
 export const getYesterdayPhotos = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_PHOTOS' })

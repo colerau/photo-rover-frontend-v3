@@ -27,7 +27,7 @@ class App extends React.Component {
           <br />
           <br />
           <img src='https://solarsystem.nasa.gov/internal_resources/3841' className="App-logo" alt="logo" />
-          <h4>scroll down to see photos</h4>
+          <h5>scroll down to see photos</h5>
           <img src="https://www.pinclipart.com/picdir/big/53-534990_white-arrow-down-white-arrow-down-png-clipart.png" alt="ᐯ" height="100px" />
           <br />
         </header>

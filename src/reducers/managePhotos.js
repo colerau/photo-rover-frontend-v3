@@ -5,7 +5,7 @@ import cloneDeep from 'lodash/cloneDeep';
 // change clone
 // return clone
 
-const managePhotos = (state = { photos: [], loading: false, userId: 0 }, action) => {
+const managePhotos = (state = { photos: [], loading: false, userId: 0, username: '' }, action) => {
 
   switch(action.type) {
 
@@ -25,7 +25,8 @@ const managePhotos = (state = { photos: [], loading: false, userId: 0 }, action)
     case 'SET_USER':
       return {
         ...state,
-        userId: action.payload.id
+        userId: action.payload.id,
+        username: action.payload.username
       }
 
     default:

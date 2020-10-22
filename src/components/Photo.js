@@ -1,23 +1,36 @@
 import React from 'react';
 import PhotosList from '../containers/PhotosList';
+import { connect } from 'react-redux';
 
-const Photo = props => {
+class Photo extends React.Component {
 
-  const { photo } = props;
+  handleClick = (event) => {
+    // TODO work on this
+    console.log(this.props.username, "saves this photo")
+  }
+  
+  render() {
 
-  return (
-    <div>
-      <li key={photo.id}>
-        <img src={`${photo.img_src}`} alt="rover" />
-      </li>
+    const { photo } = this.props;
 
-      <a href="/" className={"button1"}>Save Photo</a>
-
-      <br />
-      <br />
-      <br />
-    </div>
-  );
+    return (
+      <div>
+        <li key={photo.id}>
+          <img src={`${photo.img_src}`} alt="rover" />
+        </li>
+  
+        <button className="cool-button" onClick={this.handleClick}>Save Photo</button>
+  
+        <br />
+        <br />
+        <br />
+      </div>
+    );
+  } 
 };
 
-export default Photo;
+const mapStateToProps = (state) => ({
+  username: state.username
+})
+
+export default connect(mapStateToProps)(Photo);

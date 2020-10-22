@@ -6,15 +6,20 @@ import cloneDeep from 'lodash/cloneDeep';
 // return clone
 
 const managePhotos = (state = { photos: [], loading: false }, action) => {
+
   switch(action.type) {
+
     case 'LOADING_PHOTOS':
       return {
-  
+        ...state,
+        loading: true
       }
+
     case 'DEFAULT_PHOTOS':
       return {
         ...state,
-        photos: [...action.payload.photos]
+        photos: [...action.payload.photos],
+        loading: false
       }
 
     default:

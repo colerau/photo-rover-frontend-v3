@@ -23,23 +23,24 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <h1>Photo Rover</h1>
-          <h4>view and save pictures of Mars from NASA's Curiosity Rover</h4>
+          <h4>View and save pictures of Mars from NASA's Curiosity Rover.</h4>
           <br />
           <br />
           <img src='https://solarsystem.nasa.gov/internal_resources/3841' className="App-logo" alt="logo" />
           <br />
           <br />
-          <img src="https://www.pinclipart.com/picdir/big/53-534990_white-arrow-down-white-arrow-down-png-clipart.png" height="100px" />
+          <img src="https://www.pinclipart.com/picdir/big/53-534990_white-arrow-down-white-arrow-down-png-clipart.png" alt="ᐯ" height="100px" />
           <br />
         </header>
-        <PhotosList photos={this.filterPhotos(this.props.photos)} />
+        {this.props.loading === true ? <p>loading...</p> : <PhotosList photos={this.filterPhotos(this.props.photos)} />}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  photos: state.photos
+  photos: state.photos,
+  loading: state.loading
 })
 
 const mapDispatchToProps = (dispatch) => ({

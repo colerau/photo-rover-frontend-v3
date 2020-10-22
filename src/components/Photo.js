@@ -12,7 +12,7 @@ class Photo extends Component {
           <img src={`${photo.img_src}`} alt="rover" />
         </li>
 
-        <a href="/" className={"button1"}>Save Above Photo</a>
+        <a href="/" className={"button1"}>Save Photo</a>
 
         <br />
         <br />

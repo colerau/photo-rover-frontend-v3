@@ -5,6 +5,7 @@ import { getYesterday } from '../actions/getYesterdayPhotos'
 import SignUp from '../components/SignUp'
 import LogIn from '../components/LogIn'
 import NewEarthDate from '../components/NewEarthDate'
+import {connect} from 'react-redux'
 
 class PhotosList extends Component {
 
@@ -17,7 +18,7 @@ class PhotosList extends Component {
         <br />
         <NewEarthDate />
         <h1>
-          {`Curiosity Rover Photos from Yesterday, ${getYesterday()}`}
+          {`Curiosity Rover Photos from ${this.props.earthDate}`}
         </h1>
 
         <ul>
@@ -31,4 +32,8 @@ class PhotosList extends Component {
   }
 };
 
-export default PhotosList;
+const mapStateToProps = (state) => ({
+  earthDate: state.earthDate
+})
+
+export default connect(mapStateToProps)(PhotosList);

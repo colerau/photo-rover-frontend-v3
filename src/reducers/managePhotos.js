@@ -1,11 +1,12 @@
 import cloneDeep from 'lodash/cloneDeep';
+import {getYesterday} from '../actions/getYesterdayPhotos'
 
 // algorithm:
 // deep clone state
 // change clone
 // return clone
 
-const managePhotos = (state = { photos: [], loading: false, userId: 0, username: '' }, action) => {
+const managePhotos = (state = { photos: [], loading: false, userId: 0, username: '', earthDate: '' }, action) => {
 
   switch(action.type) {
 
@@ -19,7 +20,8 @@ const managePhotos = (state = { photos: [], loading: false, userId: 0, username:
       return {
         ...state,
         photos: [...action.payload.photos],
-        loading: false
+        loading: false,
+        earthDate: getYesterday()
       }
 
     case 'SET_USER':
@@ -32,7 +34,8 @@ const managePhotos = (state = { photos: [], loading: false, userId: 0, username:
     case 'NEW_EARTH_DATE':
       return {
         ...state,
-        photos: [...action.payload.photos]
+        photos: [...action.photos.photos],
+        earthDate: action.earthDate
       }
 
     default:

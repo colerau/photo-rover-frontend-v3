@@ -3,6 +3,7 @@ import App from '../App';
 import Photo from '../components/Photo';
 import { getYesterday } from '../actions/getYesterdayPhotos'
 import SignUp from '../components/SignUp'
+import LogIn from '../components/LogIn'
 
 class PhotosList extends Component {
 
@@ -10,6 +11,8 @@ class PhotosList extends Component {
     return(
       <div>
         <SignUp />
+        <br />
+        <LogIn />
         <h1>
           {`Curiosity Rover Photos from Yesterday, ${getYesterday()}`}
         </h1>

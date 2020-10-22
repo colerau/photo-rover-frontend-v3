@@ -7,7 +7,9 @@ class SignUp extends Component {
   }
 
   handleChange = (event) => {
-
+    this.setState({
+      username: event.target.value
+    })
   }
 
   handleSubmit = (event) => {

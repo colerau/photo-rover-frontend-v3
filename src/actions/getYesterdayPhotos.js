@@ -1,5 +1,6 @@
 // action creator
 export const getYesterdayPhotos = () => {
+  // returning an anonymous function with dispatch as argument
   return (dispatch) => {
     dispatch({ type: 'LOADING_PHOTOS' })
     fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${getYesterday()}&api_key=vw4miD1XSE91B0KYSeHkzBQ1GDdSufNUq1Cgy8Er`)

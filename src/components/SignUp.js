@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signUpUser } from '../actions/signUpUser';
 
 class SignUp extends Component {
 
@@ -13,7 +15,11 @@ class SignUp extends Component {
   }
 
   handleSubmit = (event) => {
-    
+    event.preventDefault();
+    this.props.signUpUser(this.state.username);
+    this.setState({
+      username: ''
+    })
   }
 
   render() {
@@ -31,4 +37,4 @@ class SignUp extends Component {
   }
 };
 
-export default SignUp;
+export default connect(null, { signUpUser })(SignUp);

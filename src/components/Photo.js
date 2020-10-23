@@ -9,7 +9,7 @@ class Photo extends React.Component {
     // TODO work on this
     console.log(this.props.username, "saves this photo")
     if (this.props.userId) {
-      this.props.savePhoto(this.props)
+      this.props.savePhoto(this.props, this.props.photo.img_src)
     }
   }
   
@@ -23,7 +23,7 @@ class Photo extends React.Component {
           <img src={`${photo.img_src}`} alt="rover" />
         </li>
   
-        <button className="cool-button" onClick={this.handleClick}>Save Photo</button>
+        {this.props.photoSaved ? <p>Photo Saved</p> : <button className="cool-button" onClick={this.handleClick}>Save Photo</button>}
   
         <br />
         <br />
@@ -35,7 +35,8 @@ class Photo extends React.Component {
 
 const mapStateToProps = (state) => ({
   username: state.username,
-  userId: state.userId
+  userId: state.userId,
+  photoSaved: state.photoSaved
 })
 
 export default connect(mapStateToProps, {savePhoto})(Photo);

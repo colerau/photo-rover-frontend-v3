@@ -1,11 +1,12 @@
-export const savePhoto = (props) => {
+export const savePhoto = (props, img_src) => {
   // returning an anonymous function with dispatch as argument
 
   // props is a username string
 
   let formData = {
     username: props.username,
-    userId: props.userId
+    userId: props.userId,
+    img_src: img_src
   }
 
   let configObj = {
@@ -20,6 +21,8 @@ export const savePhoto = (props) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/users/${props.userId}/photos`, configObj)
       .then(resp => resp.json())
-      .then(data => console.log(data))
+      .then(data => { 
+        dispatch({ type: "PHOTO_SAVED" })
+      })
   }  
 }

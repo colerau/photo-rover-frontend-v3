@@ -7,7 +7,7 @@ export const getSavedPhotos = (props) => {
     fetch(`http://localhost:3000/users/${props}/photos`)
       .then(resp => resp.json())
       .then(data => {
-        console.log(data)
+        dispatch({ type: "GET_SAVED_PHOTOS", payload: data })
       })
   }  
 }

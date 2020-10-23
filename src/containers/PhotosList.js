@@ -12,6 +12,7 @@ class PhotosList extends Component {
 
   handleClick = (event) => {
     if (this.props.userId) {
+      console.log(this.props.userId, "clicked the button")
       this.props.getSavedPhotos(this.props.userId)
     }
   }

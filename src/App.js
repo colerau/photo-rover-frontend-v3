@@ -12,11 +12,11 @@ class App extends React.Component {
     this.props.fetchYesterdayPhotos()
   }
 
-  filterPhotos = (photos) => {
-    if (photos) {
-      return photos.filter((photo) => (photo.id % 2 === 0))
-    }
-  }
+  // filterPhotos = (photos) => {
+  //   if (photos) {
+  //     return photos.filter((photo) => (photo.id % 2 === 0))
+  //   }
+  // }
 
   render() {
     return (
@@ -31,7 +31,7 @@ class App extends React.Component {
           <img src="https://www.pinclipart.com/picdir/big/53-534990_white-arrow-down-white-arrow-down-png-clipart.png" alt="ᐯ" height="100px" />
           <br />
         </header>
-        {this.props.loading === true ? <p>loading...</p> : <PhotosList photos={this.filterPhotos(this.props.photos)} />}
+        {this.props.loading === true ? <p>loading...</p> : <PhotosList photos={this.props.photos} />}
       </div>
     );
   }

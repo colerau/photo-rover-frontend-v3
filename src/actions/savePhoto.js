@@ -3,6 +3,8 @@ export const savePhoto = (props, img_src) => {
 
   // props is a username string
 
+  // saves photo on backend
+
   let formData = {
     username: props.username,
     userId: props.userId,

@@ -7,6 +7,8 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import managePhotos from './reducers/managePhotos'
+import {BrowserRouter as Router} from 'react-router-dom'
+
 
 const store = createStore(
   managePhotos, 
@@ -19,7 +21,9 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

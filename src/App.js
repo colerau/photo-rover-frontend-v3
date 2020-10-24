@@ -31,7 +31,9 @@ class App extends React.Component {
           <img src="https://www.pinclipart.com/picdir/big/53-534990_white-arrow-down-white-arrow-down-png-clipart.png" alt="ᐯ" height="100px" />
           <br />
         </header>
-        {this.props.loading === true ? <p>loading...</p> : <PhotosList photos={this.props.photos} />}
+        <div>
+          {this.props.loading === true ? <p>loading...</p> : <PhotosList photos={this.props.photos} />}
+        </div>
       </div>
     );
   }

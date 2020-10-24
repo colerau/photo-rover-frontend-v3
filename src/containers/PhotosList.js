@@ -7,12 +7,12 @@ import LogIn from '../components/LogIn'
 import NewEarthDate from '../components/NewEarthDate'
 import {connect} from 'react-redux'
 import {getSavedPhotos} from '../actions/getSavedPhotos'
+import {Route} from 'react-router-dom'
 
 class PhotosList extends Component {
 
   handleClick = (event) => {
     if (this.props.userId) {
-      console.log(this.props.userId, "clicked the button")
       this.props.getSavedPhotos(this.props.userId)
     }
   }
@@ -33,6 +33,7 @@ class PhotosList extends Component {
         </h1>
 
         <ul>
+          // TODO work on a route for this
           {this.props.photos && this.props.photos.map((photo) => (
             <Photo key={photo.id} photo={photo} />
           ))}

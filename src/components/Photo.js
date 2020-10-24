@@ -6,8 +6,6 @@ import {savePhoto} from '../actions/savePhoto';
 class Photo extends React.Component {
 
   handleClick = (event) => {
-    // TODO work on this
-    console.log(this.props.username, "saves this photo")
     if (this.props.userId) {
       this.props.savePhoto(this.props, this.props.photo.img_src)
     }

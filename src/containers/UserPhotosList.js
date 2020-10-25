@@ -9,28 +9,21 @@ import {connect} from 'react-redux'
 import {getSavedPhotos} from '../actions/getSavedPhotos'
 import {Route} from 'react-router-dom'
 
-class PhotosList extends Component {
+class UserPhotosList extends Component {
 
   handleClick = (event) => {
     if (this.props.userId) {
-      this.props.getSavedPhotos(this.props.userId)
+        this.props.getSavedPhotos(this.props.userId)
     }
   }
 
   render() {
     return(
       <div>
-        
-        <h1>
-          {`Curiosity Rover Photos from ${this.props.earthDate}`}
-        </h1>
+        <div>
+          <button onClick={this.handleClick}>View Your Saved Photos</button>
+        </div>
 
-        <ul>
-          {this.props.photos && this.props.photos.map((photo) => (
-            <Photo key={photo.id} photo={photo} />
-          ))}
-
-        </ul>
       </div>
     );
   }
@@ -42,4 +35,4 @@ const mapStateToProps = (state) => ({
 
 })
 
-export default connect(mapStateToProps, {getSavedPhotos})(PhotosList);
+export default connect(mapStateToProps, {getSavedPhotos})(UserPhotosList);

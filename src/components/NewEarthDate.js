@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {newEarthDate} from '../actions/newEarthDate'
+import {Redirect} from 'react-router-dom'
 
 class NewEarthDate extends Component {
 
   state = {
-    date: ''
+    date: '',
+    redirect: false
   }
 
   handleChange = (event) => {
@@ -18,13 +20,20 @@ class NewEarthDate extends Component {
     event.preventDefault();
 
     this.props.newEarthDate(this.state.date)
-    
+
+
+
     this.setState({
-      date: ''
+      date: '',
+      redirect: true
     })
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />
+    }
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

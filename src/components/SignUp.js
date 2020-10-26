@@ -25,6 +25,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
+        <br />
         <form onSubmit={this.handleSubmit}>
           <label className="cool-big-font">Sign Up</label>
           <br />

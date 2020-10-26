@@ -27,7 +27,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <div>
-          <NavBar />
+          <header className="App-header">
+            <NavBar />
+          </header>
 
           <Switch>
             <Route path="/users/:id/photos" render={(routerProps) => <UserPhotosList {...routerProps} photos={this.props.photos} />}/>

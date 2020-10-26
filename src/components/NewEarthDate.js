@@ -37,7 +37,9 @@ class NewEarthDate extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <br />
           <label className="cool-big-font">View More Photos</label>
+          <br />
           <br />
           <label className="cool-font">Earth Date (must be YYYY-MM-DD):</label> 
           <input type="text" value={this.state.date} onChange={this.handleChange} className="cool-box"/>

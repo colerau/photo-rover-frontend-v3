@@ -26,7 +26,9 @@ class LogIn extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <br />
           <label className="cool-big-font">Log In</label>
+          <br />
           <br />
           <label className="cool-font">Username:</label> 
           <input type="text" value={this.state.username} onChange={this.handleChange} className="cool-box"/>

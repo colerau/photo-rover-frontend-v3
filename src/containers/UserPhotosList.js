@@ -11,19 +11,10 @@ import {Route} from 'react-router-dom'
 
 class UserPhotosList extends Component {
 
-  handleClick = (event) => {
-    if (this.props.userId) {
-        this.props.getSavedPhotos(this.props.userId)
-    }
-  }
-
   render() {
     return(
       <div>
-        <div>
-          <button onClick={this.handleClick}>View Your Saved Photos</button>
-        </div>
-
+        {this.props.hasPhotos ? this.props.getSavedPhotos(this.props.userId) : <p>You don't have any photos saved</p>}
       </div>
     );
   }
@@ -31,8 +22,8 @@ class UserPhotosList extends Component {
 
 const mapStateToProps = (state) => ({
   earthDate: state.earthDate,
-  userId: state.userId
-
+  userId: state.userId,
+  hasPhotos: state.hasPhotos
 })
 
 export default connect(mapStateToProps, {getSavedPhotos})(UserPhotosList);

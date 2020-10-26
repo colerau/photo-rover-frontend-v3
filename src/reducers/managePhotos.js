@@ -6,7 +6,7 @@ import {getYesterday} from '../actions/getYesterdayPhotos'
 // change clone
 // return clone
 
-const managePhotos = (state = { photos: [], loading: false, userId: 0, username: '', earthDate: '', photoSaved: false }, action) => {
+const managePhotos = (state = { photos: [], loading: false, userId: 0, username: '', earthDate: '', photoSaved: false, hasPhotos: false }, action) => {
 
   switch(action.type) {
 
@@ -27,11 +27,23 @@ const managePhotos = (state = { photos: [], loading: false, userId: 0, username:
       }
 
     case 'SET_USER':
-      return {
-        ...state,
-        userId: action.payload.id,
-        username: action.payload.username,
-        photoSaved: false
+      
+      if (action.payload.photos.length > 0) {
+        return {
+          ...state,
+          userId: action.payload.user.id,
+          username: action.payload.user.username,
+          photoSaved: false,
+          hasPhotos: true
+        }
+      } else {
+        return {
+          ...state,
+          userId: action.payload.user.id,
+          username: action.payload.user.username,
+          photoSaved: false,
+          hasPhotos: false
+        }
       }
 
     case 'NEW_EARTH_DATE':
@@ -49,10 +61,15 @@ const managePhotos = (state = { photos: [], loading: false, userId: 0, username:
       }
 
     case 'GET_SAVED_PHOTOS':
-      return {
-        ...state,
-        photos: [...action.payload],
-        photoSaved: false
+
+      if (action.payload !== []) {
+        return {
+          ...state,
+          photos: [...action.payload],
+          photoSaved: false
+        }
+      } else {
+        return state
       }
 
     default:

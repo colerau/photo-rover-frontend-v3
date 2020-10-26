@@ -20,7 +20,7 @@ export const signUpUser = (props) => {
     fetch(`http://localhost:3000/users`, configObj)
       .then(resp => resp.json())
       .then(data => {
-        dispatch({ type: "SET_USER", payload: data })
+        dispatch({ type: "SET_USER", payload: data, hasPhotos: false })
       })
   }  
 }

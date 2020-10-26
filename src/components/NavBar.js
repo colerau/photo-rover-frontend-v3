@@ -6,7 +6,7 @@ const NavBar = props => {
     <div>
       <Link to="/" className="App-link" style={{paddingRight: "300px"}}><img src="https://pngimg.com/uploads/mars_planet/mars_planet_PNG23.png" alt="Home" style={{height: "60px"}}/></Link>
 
-      {props.userId ? <Link to={`/users${props.userId}/photos`} className="App-link" style={{paddingRight: "50px"}}>Saved Photos</Link> : <React.Fragment style={{paddingRight: "50px"}}> </React.Fragment>}
+      {props.userId ? <Link to={`/users/${props.userId}/photos`} className="App-link" style={{paddingRight: "50px"}}>Saved Photos</Link> : <React.Fragment style={{paddingRight: "50px"}}> </React.Fragment>}
 
       <Link to="/new-earth-date" className="App-link" style={{paddingRight: "50px"}}>New Earth Date</Link>
       <Link to="/signup" className="App-link" style={{paddingRight: "50px"}}>Sign Up</Link>

@@ -20,7 +20,10 @@ class PhotosList extends Component {
   render() {
     return(
       <div>
-        
+        <div>
+          {this.props.userId ? <h2>Logged in as {`${this.props.username}`}</h2> : <h2>You are not logged in</h2>}
+        </div>
+
         <h1>
           {`Curiosity Rover Photos from ${this.props.earthDate}`}
         </h1>
@@ -38,7 +41,8 @@ class PhotosList extends Component {
 
 const mapStateToProps = (state) => ({
   earthDate: state.earthDate,
-  userId: state.userId
+  userId: state.userId,
+  username: state.username
 
 })
 

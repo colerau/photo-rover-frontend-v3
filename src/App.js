@@ -31,7 +31,7 @@ class App extends React.Component {
       <div className="App">
         <div>
           <header className="App-header">
-            <NavBar />
+            <NavBar username={this.props.username} userId={this.props.userId} />
           </header>
 
           <Switch>
@@ -55,7 +55,9 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => ({
   photos: state.photos,
-  loading: state.loading
+  loading: state.loading,
+  username: state.username,
+  userId: state.userId
 })
 
 const mapDispatchToProps = (dispatch) => ({

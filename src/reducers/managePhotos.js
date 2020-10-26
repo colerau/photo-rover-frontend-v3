@@ -51,7 +51,8 @@ const managePhotos = (state = { photos: [], loading: false, userId: 0, username:
     case 'GET_SAVED_PHOTOS':
       return {
         ...state,
-        photos: [...action.payload]
+        photos: [...action.payload],
+        photoSaved: false
       }
 
     default:

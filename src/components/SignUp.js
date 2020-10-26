@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signUpUser } from '../actions/signUpUser';
+import {Redirect} from 'react-router-dom'
 
 class SignUp extends Component {
 
   state = {
-    username: ''
+    username: '',
+    redirect: false
   }
 
   handleChange = (event) => {
@@ -18,11 +20,16 @@ class SignUp extends Component {
     event.preventDefault();
     this.props.signUpUser(this.state.username);
     this.setState({
-      username: ''
+      username: '',
+      redirect: true
     })
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />
+    }
+
     return (
       <div>
         <br />

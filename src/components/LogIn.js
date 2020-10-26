@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {logInUser} from '../actions/logInUser';
+import {Redirect} from 'react-router-dom'
 
 class LogIn extends Component {
 
   state = {
-    username: ''
+    username: '',
+    redirect: false
   }
 
   handleChange = (event) => {
@@ -18,11 +20,17 @@ class LogIn extends Component {
     event.preventDefault();
     this.props.logInUser(this.state.username);
     this.setState({
-      username: ''
+      username: '',
+      redirect: true
     })
   }
 
   render() {
+
+    if (this.state.redirect) {
+      return <Redirect to="/" />
+    }
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

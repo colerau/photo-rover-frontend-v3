@@ -11,6 +11,8 @@ import {Route, Switch} from 'react-router-dom'
 import SignUp from './components/SignUp'
 import LogIn from './components/LogIn'
 import NewEarthDate from './components/NewEarthDate'
+import LogOut from './components/LogOut'
+import DeleteAccount from './components/DeleteAccount'
 
 class App extends React.Component {
 
@@ -36,6 +38,8 @@ class App extends React.Component {
             <Route path="/users/:id/photos" render={(routerProps) => <UserPhotosList {...routerProps} photos={this.props.photos} />}/>
             <Route path="/login" render={(routerProps) => <LogIn {...routerProps} />}/>
             <Route path="/signup" render={(routerProps) => <SignUp {...routerProps} />}/>
+            <Route path="/logout" render={(routerProps) => <LogOut {...routerProps}/>}/>
+            <Route path="/delete-account" render={(routerProps) => <DeleteAccount {...routerProps}/>}/>
             <Route path="/new-earth-date" render={(routerProps) => <NewEarthDate {...routerProps} />}/>
             <Route path="/" render={(routerProps) => <PhotosList {...routerProps} photos={this.props.photos} />}/>
           </Switch>

@@ -8,6 +8,7 @@ import NewEarthDate from '../components/NewEarthDate'
 import {connect} from 'react-redux'
 import {getSavedPhotos} from '../actions/getSavedPhotos'
 import {Route, Redirect} from 'react-router-dom'
+import UserPhoto from '../components/UserPhoto'
 
 class UserPhotosList extends Component {
 
@@ -24,6 +25,10 @@ class UserPhotosList extends Component {
     }
   }
 
+  handleClick = () => {
+    this.props.getSavedPhotos(this.props.userId)
+  }
+
   render() {
     return(
       <div>
@@ -34,11 +39,12 @@ class UserPhotosList extends Component {
 
         <div>
           {this.userLoggedIn()}
-          {this.props.userId ? this.props.getSavedPhotos(this.props.userId) : null}
+          <br />
+          {this.props.userId ? <button onClick={this.handleClick} className="cool-button">Refresh Saved Photos</button> : null}
           <div>
           </div>
           {this.props.userPhotos.length > 0 ? this.props.userPhotos.map((photo) => (
-            <Photo photo={photo} />
+            <UserPhoto key={photo.id} photo={photo} />
           )) : null}
         </div>
 

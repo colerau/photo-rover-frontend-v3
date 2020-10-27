@@ -7,7 +7,7 @@ import LogIn from '../components/LogIn'
 import NewEarthDate from '../components/NewEarthDate'
 import {connect} from 'react-redux'
 import {getSavedPhotos} from '../actions/getSavedPhotos'
-import {Route} from 'react-router-dom'
+import {Route, Redirect} from 'react-router-dom'
 
 class UserPhotosList extends Component {
 
@@ -18,6 +18,18 @@ class UserPhotosList extends Component {
 
   // }
 
+  userLoggedIn = () => {
+    if (!this.props.userId) {
+      return <Redirect to="/login" />
+    }
+  }
+
+  displayPhotos = () => {
+    this.props.photos.map((photo) => (
+      <Photo photo={photo} />
+    ))
+  }
+
   render() {
     return(
       <div>
@@ -27,13 +39,12 @@ class UserPhotosList extends Component {
         </div> */}
 
         <div>
-          {this.props.hasPhotos ? this.props.getSavedPhotos(this.props.userId) : <p>You don't have any photos saved</p>}
+          {this.userLoggedIn()}
+          <br />
+          <button className="cool-button">To Saved Photos</button>
         </div>
 
         <ul>
-          {this.props.photos.map((photo) => (
-            <Photo photo={photo} />
-          ))}
         </ul>
       </div>
     );

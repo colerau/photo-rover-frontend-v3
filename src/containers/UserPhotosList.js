@@ -11,10 +11,30 @@ import {Route} from 'react-router-dom'
 
 class UserPhotosList extends Component {
 
+  // getUserFromRoute = () => {
+  //   console.log(this.props);
+  //   debugger;
+
+
+  // }
+
   render() {
     return(
       <div>
-        {this.props.hasPhotos ? this.props.getSavedPhotos(this.props.userId) : <p>You don't have any photos saved</p>}
+
+        {/* <div>
+          {this.getUserFromRoute()}
+        </div> */}
+
+        <div>
+          {this.props.hasPhotos ? this.props.getSavedPhotos(this.props.userId) : <p>You don't have any photos saved</p>}
+        </div>
+
+        <ul>
+          {this.props.photos.map((photo) => (
+            <Photo photo={photo} />
+          ))}
+        </ul>
       </div>
     );
   }
@@ -23,7 +43,8 @@ class UserPhotosList extends Component {
 const mapStateToProps = (state) => ({
   earthDate: state.earthDate,
   userId: state.userId,
-  hasPhotos: state.hasPhotos
+  hasPhotos: state.hasPhotos,
+  photos: state.photos
 })
 
 export default connect(mapStateToProps, {getSavedPhotos})(UserPhotosList);

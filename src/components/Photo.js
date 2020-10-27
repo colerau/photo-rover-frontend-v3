@@ -7,7 +7,8 @@ class Photo extends React.Component {
 
   handleClick = (event) => {
     if (this.props.userId) {
-      this.props.savePhoto(this.props, this.props.photo.img_src)
+      this.props.savePhoto(this.props, this.props.photo.img_src);
+      alert("Photo Saved");
     }
   }
   
@@ -21,7 +22,7 @@ class Photo extends React.Component {
           <img src={`${photo.img_src}`} alt="rover" />
         </li>
   
-        {this.props.photoSaved ? <p>Photo Saved</p> : <button className="cool-button" onClick={this.handleClick}>Save Photo</button>}
+        <button className="cool-button" onClick={this.handleClick}>Save Photo</button>
   
         <br />
         <br />

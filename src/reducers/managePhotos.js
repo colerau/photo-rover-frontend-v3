@@ -6,7 +6,7 @@ import {getYesterday} from '../actions/getYesterdayPhotos'
 // change clone
 // return clone
 
-const managePhotos = (state = { photos: [], loading: false, userId: 0, username: '', earthDate: '', photoSaved: false, hasPhotos: false }, action) => {
+const managePhotos = (state = { photos: [], loading: false, userId: '', username: '', earthDate: '', photoSaved: false, hasPhotos: false, userPhotos: [] }, action) => {
 
   switch(action.type) {
 
@@ -58,12 +58,13 @@ const managePhotos = (state = { photos: [], loading: false, userId: 0, username:
       return {
         ...state,
         photoSaved: true
+
       }
 
     case 'GET_SAVED_PHOTOS':
       return {
         ...state,
-        photos: [...action.payload],
+        userPhotos: [...action.payload],
         photoSaved: false
       }
 

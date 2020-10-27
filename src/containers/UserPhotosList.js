@@ -24,12 +24,6 @@ class UserPhotosList extends Component {
     }
   }
 
-  displayPhotos = () => {
-    this.props.photos.map((photo) => (
-      <Photo photo={photo} />
-    ))
-  }
-
   render() {
     return(
       <div>
@@ -40,8 +34,12 @@ class UserPhotosList extends Component {
 
         <div>
           {this.userLoggedIn()}
-          <br />
-          <button className="cool-button">To Saved Photos</button>
+          {this.props.userId ? this.props.getSavedPhotos(this.props.userId) : null}
+          <div>
+          </div>
+          {this.props.userPhotos.length > 0 ? this.props.userPhotos.map((photo) => (
+            <Photo photo={photo} />
+          )) : null}
         </div>
 
         <ul>
@@ -55,7 +53,7 @@ const mapStateToProps = (state) => ({
   earthDate: state.earthDate,
   userId: state.userId,
   hasPhotos: state.hasPhotos,
-  photos: state.photos
+  userPhotos: state.userPhotos
 })
 
 export default connect(mapStateToProps, {getSavedPhotos})(UserPhotosList);

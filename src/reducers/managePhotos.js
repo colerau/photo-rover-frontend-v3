@@ -27,8 +27,7 @@ const managePhotos = (state = { photos: [], loading: false, userId: '', username
       }
 
     case 'SET_USER':
-      
-      if (action.payload.photos.length > 0) {
+      if (action.payload.photos && action.payload.photos.length > 0) {
         return {
           ...state,
           userId: action.payload.user.id,
@@ -39,8 +38,8 @@ const managePhotos = (state = { photos: [], loading: false, userId: '', username
       } else {
         return {
           ...state,
-          userId: action.payload.user.id,
-          username: action.payload.user.username,
+          userId: action.payload.id,
+          username: action.payload.username,
           photoSaved: false,
           hasPhotos: false
         }

@@ -1,10 +1,10 @@
-export const signUpUser = (props) => {
+export const deleteAccount = (props) => {
   // returning an anonymous function with dispatch as argument
 
-  // props is a username string
+  // props is userId
 
   let formData = {
-    username: props
+    userId: props.userId
   }
 
   let configObj = {
@@ -17,10 +17,10 @@ export const signUpUser = (props) => {
   };
 
   return (dispatch) => {
-    fetch(`http://localhost:3000/users`, configObj)
+    fetch(`http://localhost:3000/logout`, configObj)
       .then(resp => resp.json())
       .then(data => {
-        dispatch({ type: "SET_USER", payload: {"user": data}, hasPhotos: false })
+        console.log(data)
       })
   }  
 }

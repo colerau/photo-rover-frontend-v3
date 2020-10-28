@@ -14,6 +14,7 @@ import NewEarthDate from './components/NewEarthDate'
 import LogOut from './components/LogOut'
 import DeleteAccount from './components/DeleteAccount'
 import {logOut} from './actions/logOut'
+import {deleteAccount} from './actions/deleteAccount'
 
 class App extends React.Component {
 
@@ -40,7 +41,7 @@ class App extends React.Component {
             <Route path="/login" render={(routerProps) => <LogIn {...routerProps} />}/>
             <Route path="/signup" render={(routerProps) => <SignUp {...routerProps} />}/>
             <Route path="/logout" render={(routerProps) => <LogOut {...routerProps} logOut={this.props.logOut} userId={this.props.userId} />}/>
-            <Route path="/delete-account" render={(routerProps) => <DeleteAccount {...routerProps} />}/>
+            <Route path="/delete-account" render={(routerProps) => <DeleteAccount {...routerProps} deleteAccount={this.props.deleteAccount} userId={this.props.userId} />}/>
             <Route path="/new-earth-date" render={(routerProps) => <NewEarthDate {...routerProps} />}/>
             <Route path="/" render={(routerProps) => <PhotosList {...routerProps} photos={this.props.photos} />}/>
           </Switch>
@@ -63,7 +64,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchYesterdayPhotos: () => dispatch(getYesterdayPhotos()),
-  logOut: (userId) => dispatch(logOut(userId))
+  logOut: (userId) => dispatch(logOut(userId)),
+  deleteAccount: (userId) => dispatch(deleteAccount(userId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

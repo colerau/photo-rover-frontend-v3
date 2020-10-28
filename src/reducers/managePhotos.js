@@ -38,8 +38,8 @@ const managePhotos = (state = { photos: [], loading: false, userId: '', username
       } else {
         return {
           ...state,
-          userId: action.payload.id,
-          username: action.payload.username,
+          userId: action.payload.user.id,
+          username: action.payload.user.username,
           photoSaved: false,
           hasPhotos: false
         }

@@ -6,6 +6,7 @@ const LogOut = props => {
   const handleClick = () => {
     if (props.userId) {
       props.logOut(props.userId)
+      alert("You are logged out")
     }
   }
 

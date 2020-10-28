@@ -2,13 +2,9 @@ export const deleteAccount = (props) => {
   // returning an anonymous function with dispatch as argument
 
   // props is userId
-
-  console.log(":(")
-
-  debugger
   
   let formData = {
-    userId: props.userId
+    userId: props
   }
 
   let configObj = {
@@ -24,7 +20,7 @@ export const deleteAccount = (props) => {
     fetch(`http://localhost:3000/delete-account`, configObj)
       .then(resp => resp.json())
       .then(data => {
-        console.log(data)
+        dispatch({ type: "DELETE_ACCOUNT" })
       })
   }  
 }

@@ -6,6 +6,7 @@ const DeleteAccount = props => {
   const handleClick = () => {
     if (props.userId) {
       props.deleteAccount(props.userId)
+      alert("Your account has been deleted")
     }
   }
 

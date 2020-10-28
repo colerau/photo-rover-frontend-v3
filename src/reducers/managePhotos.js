@@ -27,7 +27,6 @@ const managePhotos = (state = { photos: [], loading: false, userId: '', username
       }
 
     case 'SET_USER':
-      debugger
       if (action.payload.photos && action.payload.photos.length > 0) {
         return {
           ...state,
@@ -73,6 +72,14 @@ const managePhotos = (state = { photos: [], loading: false, userId: '', username
         ...state,
         userId: "",
         username: "",
+        photoSaved: false
+      }
+
+    case "DELETE_ACCOUNT":
+      return {
+        ...state,
+        userId: '',
+        username: '',
         photoSaved: false
       }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotosList from '../containers/PhotosList';
+// import PhotosList from '../containers/PhotosList';
 import { connect } from 'react-redux';
 import {savePhoto} from '../actions/savePhoto';
 

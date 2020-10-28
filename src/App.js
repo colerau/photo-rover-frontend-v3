@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import PhotosList from './containers/PhotosList'
 import { getYesterdayPhotos } from './actions/getYesterdayPhotos'
 import { connect } from 'react-redux'
-import uniq from 'lodash/uniq'
+// import uniq from 'lodash/uniq'
 import UserPhotosList from './containers/UserPhotosList'
 import NavBar from './components/NavBar'
 import {Route, Switch} from 'react-router-dom'
@@ -15,6 +15,7 @@ import LogOut from './components/LogOut'
 import DeleteAccount from './components/DeleteAccount'
 import {logOut} from './actions/logOut'
 import {deleteAccount} from './actions/deleteAccount'
+import Tutorial from './components/Tutorial'
 
 class App extends React.Component {
 
@@ -43,6 +44,7 @@ class App extends React.Component {
             <Route path="/logout" render={(routerProps) => <LogOut {...routerProps} logOut={this.props.logOut} userId={this.props.userId} />}/>
             <Route path="/delete-account" render={(routerProps) => <DeleteAccount {...routerProps} deleteAccount={this.props.deleteAccount} userId={this.props.userId} />}/>
             <Route path="/new-earth-date" render={(routerProps) => <NewEarthDate {...routerProps} />}/>
+            <Route path="/tutorial" render={(routerProps) => <Tutorial {...routerProps} />}/>
             <Route path="/" render={(routerProps) => <PhotosList {...routerProps} photos={this.props.photos} />}/>
           </Switch>
         </div>

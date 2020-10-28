@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import App from '../App';
-import Photo from '../components/Photo';
-import { getYesterday } from '../actions/getYesterdayPhotos'
-import SignUp from '../components/SignUp'
-import LogIn from '../components/LogIn'
-import NewEarthDate from '../components/NewEarthDate'
+// import App from '../App';
+// import Photo from '../components/Photo';
+// import { getYesterday } from '../actions/getYesterdayPhotos'
+// import SignUp from '../components/SignUp'
+// import LogIn from '../components/LogIn'
+// import NewEarthDate from '../components/NewEarthDate'
 import {connect} from 'react-redux'
 import {getSavedPhotos} from '../actions/getSavedPhotos'
-import {Route, Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import UserPhoto from '../components/UserPhoto'
 
 class UserPhotosList extends Component {

@@ -9,6 +9,7 @@ const NavBar = props => {
       {props.userId ? <Link to={`/users/${props.userId}/photos`} className="App-link" style={{paddingRight: "50px"}}>Saved Photos</Link> : <React.Fragment style={{paddingRight: "50px"}}> </React.Fragment>}
 
       <Link to="/new-earth-date" className="App-link" style={{paddingRight: "50px"}}>New Earth Date</Link>
+      <Link to="tutorial" className="App-link" style={{paddingRight: "50px"}}>Tutorial</Link>
       <Link to="/signup" className="App-link" style={{paddingRight: "50px"}}>Sign Up</Link>
       <Link to="/login" className="App-link" style={{paddingRight: "50px"}}>Log In</Link>
       <Link to="/logout" className="App-link" style={{paddingRight: "50px"}}>Log Out</Link>

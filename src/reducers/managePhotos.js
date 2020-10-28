@@ -1,4 +1,4 @@
-import cloneDeep from 'lodash/cloneDeep';
+// import cloneDeep from 'lodash/cloneDeep';
 import {getYesterday} from '../actions/getYesterdayPhotos'
 
 // algorithm:

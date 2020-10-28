@@ -11,7 +11,7 @@ const Tutorial = (props) => {
         Viewing More Photos
       </h3>
       <p>
-        To see more photos of Mars, navigate to the home screen (click the picture of Mars in the top-left corner). Click "New Earth Date" in the header. Type in a new Earth date in the form. The date has to be written as YYYY-MM-DD (e.g., 2019-09-08, which stands for September 8th, 2019). After submitting the form, photos of Mars from the new Earth date should appear. 
+        To see more photos of Mars, navigate to the home screen (click the picture of Mars in the top-left corner). Click "New Earth Date" in the header. Type in a new date. The date must be written as YYYY-MM-DD (e.g., 2019-09-08, which stands for September 8th, 2019). After submitting the form, photos of Mars from the new Earth date should appear. 
       </p>
 
       <br /> <br /> <br />
@@ -26,6 +26,10 @@ const Tutorial = (props) => {
       <p>
         To view a saved photo, navigate to the home screen (click the picture of Mars in the top-left corner). Click "Saved Photos" in the header. Click the "Refresh Saved Photos" button. If you have photos saved, they should appear on the page. 
       </p>
+
+      <br /> <br /> <br /> <br />
+
+      <img src="https://mars.nasa.gov/system/feature_items/images/6037_msl_banner.jpg" alt="rover" height="300" />
     </div>
   )
 }

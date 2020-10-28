@@ -9,5 +9,8 @@ export const newEarthDate = (props) => {
       .then(data => {
         dispatch({ type: "NEW_EARTH_DATE", photos: data, earthDate: props })
       })
+      .catch(error => {
+        alert("Invalid date format (must be YYYY-MM-DD)")
+      })
   }  
 }

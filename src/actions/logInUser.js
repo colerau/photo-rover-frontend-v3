@@ -20,7 +20,11 @@ export const logInUser = (props) => {
     fetch(`http://localhost:3000/login`, configObj)
       .then(resp => resp.json())
       .then(data => {
-        dispatch({ type: "SET_USER", payload: data })
+        if (data.message === "User not found") {
+          alert("Could not find user")
+        } else {
+          dispatch({ type: "SET_USER", payload: data })
+        } 
       })
   }  
 }

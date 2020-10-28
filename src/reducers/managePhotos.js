@@ -27,6 +27,7 @@ const managePhotos = (state = { photos: [], loading: false, userId: '', username
       }
 
     case 'SET_USER':
+      debugger
       if (action.payload.photos && action.payload.photos.length > 0) {
         return {
           ...state,

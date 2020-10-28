@@ -3,6 +3,10 @@ export const deleteAccount = (props) => {
 
   // props is userId
 
+  console.log(":(")
+
+  debugger
+  
   let formData = {
     userId: props.userId
   }
@@ -17,7 +21,7 @@ export const deleteAccount = (props) => {
   };
 
   return (dispatch) => {
-    fetch(`http://localhost:3000/logout`, configObj)
+    fetch(`http://localhost:3000/delete-account`, configObj)
       .then(resp => resp.json())
       .then(data => {
         console.log(data)

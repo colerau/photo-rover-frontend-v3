@@ -67,6 +67,14 @@ const managePhotos = (state = { photos: [], loading: false, userId: '', username
         photoSaved: false
       }
 
+    case "LOG_OUT":
+      return {
+        ...state,
+        userId: "",
+        username: "",
+        photoSaved: false
+      }
+
     default:
       return state
   }

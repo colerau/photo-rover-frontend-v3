@@ -23,6 +23,12 @@ class UserPhotosList extends Component {
 
   // }
 
+  unfavorite = (photoId) => {
+    this.setState({
+      photoId: ''
+    })
+  }
+
   favorited = (photoId) => {
     // console.log("in function")
     // console.log(photoId)
@@ -59,7 +65,7 @@ class UserPhotosList extends Component {
           <div>
           </div>
           {this.props.userPhotos.length > 0 ? this.props.userPhotos.map((photo) => (
-            <UserPhoto key={photo.id} photo={photo} favorited={this.favorited} favoritedPhotoId={this.state.photoId} />
+            <UserPhoto key={photo.id} photo={photo} favorited={this.favorited} favoritedPhotoId={this.state.photoId} unfavorite={this.unfavorite}/>
           )) : null}
         </div>
       </div>

@@ -12,12 +12,27 @@ import UserPhoto from '../components/UserPhoto'
 
 class UserPhotosList extends Component {
 
+  state = {
+    favorited: false
+  }
+
   // getUserFromRoute = () => {
   //   console.log(this.props);
   //   debugger;
 
 
   // }
+
+  favorited = (photoId) => {
+    // console.log("in function")
+    // console.log(photoId)
+
+    this.setState({
+      favorited: true,
+      photoId: photoId
+    })
+
+  }
 
   userLoggedIn = () => {
     if (!this.props.userId) {
@@ -44,12 +59,9 @@ class UserPhotosList extends Component {
           <div>
           </div>
           {this.props.userPhotos.length > 0 ? this.props.userPhotos.map((photo) => (
-            <UserPhoto key={photo.id} photo={photo} />
+            <UserPhoto key={photo.id} photo={photo} favorited={this.favorited} favoritedPhotoId={this.state.photoId} />
           )) : null}
         </div>
-
-        <ul>
-        </ul>
       </div>
     );
   }

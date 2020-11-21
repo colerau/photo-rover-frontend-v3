@@ -1,6 +1,6 @@
 # Photo Rover Frontend
 
-## With Photo Rover, you can view a daily-updating list of pictures straight from NASA's Curiosty Mars rover. 
+## With Photo Rover, you can view a daily-updating list of pictures straight from NASA's Curiosity Mars rover. 
 
 This app was created with React, Redux, and Redux Thunk. 
 

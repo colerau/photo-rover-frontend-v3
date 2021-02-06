@@ -10,7 +10,7 @@ Check out the tutorial to learn more!
 
 ---
 
-**Demo**
+### Demo
 
 [![Demo Video](http://img.youtube.com/vi/m2Ufl3jyjNQ/0.jpg)](http://www.youtube.com/watch?v=m2Ufl3jyjNQ)
 
